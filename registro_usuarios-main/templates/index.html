@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/flash_message.css">
+    <link rel="stylesheet" href="/static/css/nav_style.css">
+    <link rel="stylesheet" href="/static/css/form_style.css">
+         
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>REGISTRO DE USUARIOS</title>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+                <p class="flash">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+  {% endwith %}
+  <nav>
+    <div class="nav-bar">
+      <i class="bx bx-menu sidebarOpen"></i>
+      <span class="logo navLogo"><a href="#">REGISTRO</a></span>
+
+      <div class="menu">
+        <div class="logo-toggle">
+          <span class="logo"><a href="#">Coding Stella</a></span>
+          <i class="bx bx-x siderbarClose"></i>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="/">Registro</a></li>
+          <li><a href="/list_users">Usuarios</a></li>
+        </ul>
+      </div>
+
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Formulario-->
+  <div class="wrapper">
+    <form action="/registro" method="POST">
+        <h2>Registro de usuarios</h2>
+        <div class="input-field">
+            <input type="text" name="username" required>
+            <label>Ingresar nombre de usuario</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" required>
+            <label>Ingresar contraseña</label>
+        </div>
+        <div class="input-field">
+            <input type="email" name="email" required>
+            <label>Ingresar correo</label>
+        </div>
+        <div class="input-field">
+            <input type="number" name="age" required>
+            <label>Ingresar edad</label>
+        </div>
+        <button type="submit">Registrarse</button>
+        <!-- <div class="register">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div> -->
+    </form>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

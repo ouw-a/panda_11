@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #b646eb;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+tr:nth-child(odd) td {
+    color: #b79ced; /* Lavanda oscuro */
+}
+
+tr:nth-child(even) td {
+    color: #8ab4f8; /* Azul pastel Google */
+}
+
+tr:hover {
+    background-color: #3a3a3a;
+    transition: 0.3s;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/nav_style.css">
+    <link rel="stylesheet" href="/static/css/table_style.css">
+         
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>LISTA</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="bx bx-menu sidebarOpen"></i>
+            <span class="logo navLogo"><a href="#">REGISTRO</a></span>
+
+            <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="#">Coding Stella</a></span>
+                <i class="bx bx-x siderbarClose"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="/">Registro</a></li>
+                <li><a href="/list_users">Usuarios</a></li>
+            </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class="bx bx-moon moon"></i>
+                <i class="bx bx-sun sun"></i>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <h1>Lista de Nombres</h1>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de usuario</th>
+                <th>Contraseña</th>
+                <th>Email</th>
+                <th>Edad</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[1] }}</td>  
+                <td>{{ usuario[2] }}</td>  
+                <td>{{ usuario[3] }}</td>  
+                <td>{{ usuario[4] }}</td>  
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
